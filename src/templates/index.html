@@ -37,25 +37,27 @@
                 <th>Added</th>
                 <th>Actions</th>
             </tr>
-            {% for task in tasks %}
+            {% for task in tasks_add %}
             <tr>
 
                 <td>{{ task.content }}</td>
                 <td>{{ task.date_created.date()}}</td>
 
                 <td>
-                    <a href="">Delete</a>
+                    <a href="/delete/{{task.id}}">Delete</a>
                     <br>
-                    <a href="">Update</a>
+                    <a href="/update/{{task.id}}">Update</a>
                 </td>
             </tr>
             {% endfor %}
         </table>
         <br>
-        <form action="/" method="POST" style="text-align: center">
-            <input type="text" name="content" id="content">
-            <input type="submit" value="Add Task">
-        </form>
+        <div class="form">
+            <form action="/" method="POST" style="text-align: center">
+                <input type="text" name="content" id="content">
+                <input type="submit" value="Add Task">
+            </form>
+        </div>
     </div>
 
 </body>
